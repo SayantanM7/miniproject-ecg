@@ -1,0 +1,23 @@
+BEST HYPERPARAMETERS:
+==================================================
+conv1_filters: 16
+conv1_kernel: 5
+conv2_filters: 32
+conv2_kernel: 7
+add_conv3: False
+dense_units: 32
+dropout_rate: 0.6000000000000001
+add_dense2: False
+learning_rate: 0.007752323623504601
+
+==================================================
+CLASSIFICATION REPORT:
+==================================================
+              precision    recall  f1-score   support
+
+           0       0.80      0.95      0.87     12312
+           1       0.87      0.61      0.72      7345
+
+    accuracy                           0.82     19657
+   macro avg       0.84      0.78      0.79     19657
+weighted avg       0.83      0.82      0.81     19657

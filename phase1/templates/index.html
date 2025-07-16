@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ECG Monitor</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+</head>
+<body>
+  <h1>Real-time ECG</h1>
+  <canvas id="ecgChart" width="800" height="400"></canvas>
+
+  <script>
+    const ctx = document.getElementById('ecgChart').getContext('2d');
+    const ecgData = {
+      labels: Array(100).fill(''),
+      datasets: [{
+        label: 'ECG',
+        data: Array(100).fill(0),
+        borderColor: 'red',
+        tension: 0.1
+      }]
+    };
+    const config = { type: 'line', data: ecgData };
+    const chart = new Chart(ctx, config);
+
+    const socket = io();
+
+    socket.on('ecg_data', (data) => {
+      ecgData.datasets[0].data.push(data.value);
+      ecgData.datasets[0].data.shift();
+      chart.update();
+    });
+  </script>
+</body>
+</html>

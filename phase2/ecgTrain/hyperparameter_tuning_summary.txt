@@ -1,0 +1,18 @@
+
+HYPERPARAMETER TUNING SUMMARY
+==============================
+Total Trials: 20
+Best Validation Accuracy: 0.8453
+Final Test Accuracy: 0.8199
+
+Best Hyperparameters:
+------------------------------
+conv1_filters: 16
+conv1_kernel: 5
+conv2_filters: 32
+conv2_kernel: 7
+add_conv3: False
+dense_units: 32
+dropout_rate: 0.6000000000000001
+add_dense2: False
+learning_rate: 0.007752323623504601
